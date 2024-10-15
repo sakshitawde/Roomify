@@ -31,7 +31,7 @@ main()
     });
 
 async function main() {
-    await mongoose.connect(dbUrl);
+    await mongoose.connect('mongodb://localhost:27017/test');
 };
 
 app.set("view engine", "ejs");
@@ -82,8 +82,9 @@ app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
 // Error handler middlewares:
-app.all("*", (req, res, next) => {
-    next(new ExpressError(404, "Page not found"));
+app.all("/", (req, res, next) => {
+    // next(new ExpressError(404, "Page not found"));
+    res.render('listings/home');
 });
 
 app.use((err, req, res, next) => {
@@ -92,6 +93,6 @@ app.use((err, req, res, next) => {
     // res.status(statusCode).send(message);
 })
 
-app.listen(8080, () => {
-    console.log("server is listenig on port 8080")
+app.listen(5001, () => {
+    console.log("server is listenig on port 5001")
 })
