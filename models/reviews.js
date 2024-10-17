@@ -1,7 +1,6 @@
 const { string, number } = require("joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-//schema for review feature
 const reviewSchema = new Schema({
     comment: {
         type: String,
