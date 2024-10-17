@@ -16,7 +16,7 @@ const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
 
 const listingRouter = require("./routes/listing.js");
-const reviewRouter = require("./routes/review.js");
+const reviewRouter = require("./routes/review.js");// review route added here
 const userRouter = require("./routes/user.js");
 
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
